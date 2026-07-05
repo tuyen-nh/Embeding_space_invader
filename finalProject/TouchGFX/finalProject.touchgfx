@@ -7,8 +7,8 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel1",
-            "X": 16,
-            "Y": 195,
+            "X": 33,
+            "Y": 239,
             "Width": 175,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
@@ -32,7 +32,71 @@
       },
       {
         "Name": "Screen2",
-        "Components": [],
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "bg",
+            "X": -114,
+            "Y": -100,
+            "Width": 600,
+            "Height": 800,
+            "Visible": false,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "plane",
+            "X": 83,
+            "Y": 245,
+            "Width": 75,
+            "Height": 68,
+            "RelativeFilename": "spaceship.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "enemy1",
+            "X": 162,
+            "Y": 66,
+            "Width": 38,
+            "Height": 38,
+            "RelativeFilename": "alien1.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "enemy2",
+            "X": 158,
+            "Y": 109,
+            "Width": 47,
+            "Height": 34,
+            "RelativeFilename": "alien2.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "enemy3",
+            "Y": 109,
+            "Width": 47,
+            "Height": 34,
+            "RelativeFilename": "alien3.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "enemy4",
+            "X": 58,
+            "Y": 104,
+            "Width": 51,
+            "Height": 39,
+            "RelativeFilename": "alien4.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "enemy5",
+            "X": 120,
+            "Y": 109,
+            "Width": 30,
+            "Height": 34,
+            "RelativeFilename": "alien5.png"
+          }
+        ],
         "Interactions": []
       }
     ],

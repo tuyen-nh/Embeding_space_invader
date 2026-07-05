@@ -470,6 +470,76 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alien1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alien2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alien3.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien3.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alien4.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien4.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alien5.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien5.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alien_bullet.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alien_bullet.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bullet.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bullet.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exp1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exp1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exp2.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exp2.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exp3.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exp3.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exp4.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exp4.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_exp5.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_exp5.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_spaceship.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_spaceship.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/LanguageGb.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
