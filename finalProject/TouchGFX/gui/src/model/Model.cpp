@@ -1,12 +1,18 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-Model::Model() : modelListener(0)
-{
-
+extern "C" {
+    #include "audio_player.h"
 }
 
-void Model::tick()
-{
+Model::Model() : modelListener(0) {}
 
+void Model::tick() {}
+
+void Model::playLaserSound() {
+    Audio_PlayLaser();
+}
+
+void Model::playExplosionSound() {
+    Audio_PlayExplosion();
 }

@@ -5,14 +5,30 @@
         "Name": "Screen1",
         "Components": [
           {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 600,
+            "Height": 800,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 20,
+            "Y": 14,
+            "Width": 200,
+            "Height": 80,
+            "RelativeFilename": "space-invaders-logo-200.png"
+          },
+          {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
+            "Name": "startButton",
             "X": 33,
             "Y": 239,
             "Width": 175,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
             "TextId": "__SingleUse_JSML",
             "ReleasedColor": {
               "Red": 255,
@@ -25,10 +41,24 @@
               "Blue": 255
             },
             "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
       },
       {
         "Name": "Screen2",
@@ -48,8 +78,8 @@
             "Name": "plane",
             "X": 83,
             "Y": 245,
-            "Width": 75,
-            "Height": 68,
+            "Width": 35,
+            "Height": 32,
             "RelativeFilename": "spaceship.png"
           },
           {
@@ -57,8 +87,8 @@
             "Name": "enemy1",
             "X": 162,
             "Y": 66,
-            "Width": 38,
-            "Height": 38,
+            "Width": 28,
+            "Height": 28,
             "RelativeFilename": "alien1.png"
           },
           {
@@ -66,16 +96,16 @@
             "Name": "enemy2",
             "X": 158,
             "Y": 109,
-            "Width": 47,
-            "Height": 34,
+            "Width": 35,
+            "Height": 25,
             "RelativeFilename": "alien2.png"
           },
           {
             "Type": "Image",
             "Name": "enemy3",
             "Y": 109,
-            "Width": 47,
-            "Height": 34,
+            "Width": 35,
+            "Height": 25,
             "RelativeFilename": "alien3.png"
           },
           {
@@ -83,8 +113,8 @@
             "Name": "enemy4",
             "X": 58,
             "Y": 104,
-            "Width": 51,
-            "Height": 39,
+            "Width": 37,
+            "Height": 28,
             "RelativeFilename": "alien4.png"
           },
           {
@@ -92,8 +122,8 @@
             "Name": "enemy5",
             "X": 120,
             "Y": 109,
-            "Width": 30,
-            "Height": 34,
+            "Width": 25,
+            "Height": 28,
             "RelativeFilename": "alien5.png"
           }
         ],

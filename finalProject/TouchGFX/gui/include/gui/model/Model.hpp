@@ -14,6 +14,8 @@ public:
     }
 
     void tick();
+    void playLaserSound();
+    void playExplosionSound();
 protected:
     ModelListener* modelListener;
 };
