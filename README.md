@@ -1,3 +1,34 @@
+Gọi âm thanh từ giao diện (Screen View)Giờ đây, bạn có thể kích hoạt âm thanh ở bất kỳ đâu trong quá trình chơi game thông qua file điều khiển logic màn hình (View $\rightarrow$ Presenter $\rightarrow$ Model).Ví dụ khi nhấn nút bắn đạn:
+// Trong Screen1View.cpp
+void Screen1View::onShootButtonPressed() {
+    // Logic tạo viên đạn bay lên...
+    
+    presenter->fireLaser(); // Gửi lệnh sang Presenter
+}
+
+// Trong Screen1Presenter.cpp
+void Screen1Presenter::fireLaser() {
+    model->playLaserSound(); // Lệnh truyền xuống Model
+}
+Ví dụ khi đạn va chạm với tàu địch (Nổ):
+
+// Trong Screen1View.cpp (Hoặc nơi bạn kiểm tra va chạm)
+void Screen1View::checkCollision() {
+    if (bulletHitAlien) {
+        // Logic xóa tàu địch, cộng điểm...
+        
+        presenter->alienDestroyed(); // Gửi lệnh sang Presenter
+    }
+}
+
+// Trong Screen1Presenter.cpp
+void Screen1Presenter::alienDestroyed() {
+    model->playExplosionSound(); // Lệnh truyền xuống Model
+}
+Nhớ khai báo các hàm fireLaser() và alienDestroyed() trong file .hpp của Presenter tương ứng trước khi gọi nhé. Sau khi hoàn tất, bạn chỉ cần Build lại project và nạp vào mạch là hai loại âm thanh sẽ hoạt động độc lập theo từng sự kiện!
+
+---------------------SETUP PHẦN CỨNG--------------------------------------------------------
+
 Tín hiệu âm thanh xuất ra từ chân DAC (PA5) của vi điều khiển là tín hiệu tương tự (Analog) nhưng có dòng điện cực kỳ nhỏ. Hơn nữa, DAC của STM32 xuất dải điện áp từ 0V đến 3.3V (tín hiệu đơn cực - Unipolar), nghĩa là ở trạng thái im lặng, điện áp luôn neo ở mức khoảng 1.65V (chứ không phải 0V).
 
 Nếu bạn cắm trực tiếp một chiếc loa vào chân PA5, âm thanh sẽ rất bé, loa bị nóng do dòng DC chạy qua liên tục, hoặc thậm chí làm hỏng chân IO của vi điều khiển. Để chạy đúng chuẩn kỹ thuật mạch điện nhúng, bạn cần các phần cứng sau:
