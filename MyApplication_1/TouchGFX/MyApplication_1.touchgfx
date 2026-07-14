@@ -1,0 +1,674 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 600,
+            "Height": 800,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Tital",
+            "X": 20,
+            "Y": 28,
+            "Width": 200,
+            "Height": 80,
+            "RelativeFilename": "space-invaders-logo-200.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "startButtom",
+            "X": 33,
+            "Y": 224,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
+            "TextId": "__SingleUse_ZB7A",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 217,
+              "Green": 48,
+              "Blue": 48
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "startButtom"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "bg",
+            "X": -122,
+            "Y": -37,
+            "Width": 600,
+            "Height": 800,
+            "RelativeFilename": "bg.png"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "pause",
+            "X": 197,
+            "Y": 5,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.png",
+            "Released": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.png",
+            "IconPressed": "__generated\\icon_theme_images_action_home_36_36_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_home_36_36_E8F6FB.svg.png",
+            "IconHeight": 36,
+            "IconWidth": 36
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy16",
+            "X": 108,
+            "Y": 66,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy15",
+            "X": 112,
+            "Y": 153,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Image",
+            "Name": "aline",
+            "X": 63,
+            "Y": 69,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "RelativeFilename": "alien_bullet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "aline1",
+            "X": 63,
+            "Y": 69,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "RelativeFilename": "alien_bullet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "aline2",
+            "X": 63,
+            "Y": 69,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "RelativeFilename": "alien_bullet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "aline3",
+            "X": 63,
+            "Y": 69,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "RelativeFilename": "alien_bullet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "aline4",
+            "X": 63,
+            "Y": 69,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "RelativeFilename": "alien_bullet.png"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy1",
+            "X": 36,
+            "Y": 66,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy21",
+            "X": 127,
+            "Y": 110,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy12",
+            "X": 171,
+            "Y": 93,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy2",
+            "X": 89,
+            "Y": 138,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy13",
+            "X": 54,
+            "Y": 93,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy17",
+            "X": 154,
+            "Y": 66,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy8",
+            "X": 131,
+            "Y": 51,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy5",
+            "X": 154,
+            "Y": 117,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy18",
+            "X": 69,
+            "Y": 66,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy11",
+            "X": 182,
+            "Y": 41,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy10",
+            "X": 44,
+            "Y": 40,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy22",
+            "X": 103,
+            "Y": 118,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy3",
+            "X": 182,
+            "Y": 66,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy7",
+            "X": 74,
+            "Y": 33,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy14",
+            "X": 69,
+            "Y": 117,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy19",
+            "X": 131,
+            "Y": 86,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy4",
+            "X": 132,
+            "Y": 138,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy20",
+            "X": 89,
+            "Y": 93,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy9",
+            "X": 89,
+            "Y": 48,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "enemy6",
+            "X": 154,
+            "Y": 33,
+            "Width": 15,
+            "Height": 15,
+            "Filename": "alien3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "FullHealthBar",
+            "X": 103,
+            "Y": 294,
+            "Width": 36,
+            "Height": 5,
+            "Visible": false,
+            "Filename": "healthbarBg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "HealthBar1",
+            "X": 103,
+            "Y": 306,
+            "Width": 24,
+            "Height": 5,
+            "Visible": false,
+            "Filename": "healthbarBg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "HealthBar3",
+            "Width": 12,
+            "Height": 5,
+            "Visible": false,
+            "Filename": "healthbarBg.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Image",
+            "Name": "bullet",
+            "X": 128,
+            "Y": 61,
+            "Width": 11,
+            "Height": 11,
+            "Visible": false,
+            "RelativeFilename": "bullet.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "plane",
+            "X": 103,
+            "Y": 267,
+            "Width": 35,
+            "Height": 32,
+            "RelativeFilename": "spaceship.png"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "exp1",
+            "X": 64,
+            "Y": 187,
+            "Width": 17,
+            "Height": 18,
+            "Visible": false,
+            "Filename": "exp1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "exp2",
+            "X": 89,
+            "Y": 187,
+            "Width": 10,
+            "Height": 10,
+            "Visible": false,
+            "Filename": "exp2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "exp3",
+            "X": 118,
+            "Y": 185,
+            "Width": 13,
+            "Height": 13,
+            "Visible": false,
+            "Filename": "exp3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "exp4",
+            "X": 142,
+            "Y": 183,
+            "Width": 15,
+            "Height": 15,
+            "Visible": false,
+            "Filename": "exp4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "exp5",
+            "X": 163,
+            "Y": 184,
+            "Width": 15,
+            "Height": 15,
+            "Visible": false,
+            "Filename": "exp5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "ContinueWin",
+            "X": 33,
+            "Y": 168,
+            "Width": 175,
+            "Height": 50,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
+            "TextId": "__SingleUse_KCNJ",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 217,
+              "Green": 48,
+              "Blue": 48
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "ReleasePause",
+            "X": 33,
+            "Y": 168,
+            "Width": 175,
+            "Height": 50,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
+            "TextId": "__SingleUse_MVNR",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 217,
+              "Green": 48,
+              "Blue": 48
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "lose",
+            "X": 33,
+            "Y": 168,
+            "Width": 175,
+            "Height": 50,
+            "Visible": false,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
+            "TextId": "__SingleUse_HZPH",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 217,
+              "Green": 48,
+              "Blue": 48
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
+          },
+          {
+            "Type": "Image",
+            "Name": "Tital2",
+            "X": 20,
+            "Y": 28,
+            "Width": 200,
+            "Height": 80,
+            "Visible": false,
+            "RelativeFilename": "space-invaders-logo-200.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "lose"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ContinueWin"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "pause"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "pauseButtonClicked"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ReleasePause"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "PauseRelease"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication_1",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.26.1",
+  "CreatedBy": "4.26.1"
+}
