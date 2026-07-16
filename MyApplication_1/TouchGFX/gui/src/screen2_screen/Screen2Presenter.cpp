@@ -16,3 +16,11 @@ void Screen2Presenter::deactivate()
 {
 
 }
+
+void Screen2Presenter::playerFired() {
+    model->playLaserSound();
+}
+
+void Screen2Presenter::playerDestroyed() {
+    model->playExplosionSound();
+}

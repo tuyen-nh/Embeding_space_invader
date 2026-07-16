@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen2Presenter() {}
 
+    void playerFired();
+    void playerDestroyed();
 private:
     Screen2Presenter();
 

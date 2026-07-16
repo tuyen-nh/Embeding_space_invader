@@ -19,7 +19,7 @@ protected:
     bool isJoystickReleased;
 
 
-//    // --- Enemy Configs ---
+//    //  Enemy Configs 
         static const int TOTAL_ENEMIES = 22; // Set to exactly 22 enemies
         touchgfx::Image* enemyBullets[MAX_ENEMY_BULLETS];
         touchgfx::ScalableImage* enemies[TOTAL_ENEMIES];
@@ -30,11 +30,23 @@ protected:
 
         int enemyStatus[TOTAL_ENEMIES];
 
-        // 1. Khai báo biến quản lý trạng thái Pause
             bool isPaused;
-        // 2. Khai báo đè (override) lại hàm ảo từ lớp cha Base sinh ra
              virtual void pauseButtonClicked();
              virtual void PauseRelease();
+        bool isVictorySoundPlayed = false;
+
+        float baseEnemySpeedX = 1.0f; // Tốc độ di chuyển ngang cơ bản
+        int enemyStepDownY = 8;       // Khoảng cách cụm địch dịch xuống mỗi khi chạm biên (px)
+        uint16_t currentMusicPeriod = 124; // Giá trị nạp lại của TIM7 (Period)
+
+        float maxReachedEnemySpeedX; 
+        uint16_t minReachedMusicPeriod;  
+    int currentWave = 1; // Quản lý màn chơi hiện tại (1, 2, 3)
+    void loadNextWave(); // Hàm load lại kẻ địch
+
+    //  ĐỊNH NGHĨA 5 ĐỘI HÌNH TỌA ĐỘ (X, Y) 
+    static const int formationX[5][TOTAL_ENEMIES];
+    static const int formationY[5][TOTAL_ENEMIES];
 };
 
 #endif // SCREEN2VIEW_HPP

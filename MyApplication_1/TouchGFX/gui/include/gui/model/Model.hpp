@@ -7,13 +7,13 @@ class Model
 {
 public:
     Model();
-
-    void bind(ModelListener* listener)
-    {
-        modelListener = listener;
-    }
-
+    void bind(ModelListener* listener) { modelListener = listener; }
     void tick();
+
+    // Khai báo 2 hàm public kết nối sang Presenter
+    void playLaserSound();
+    void playExplosionSound();
+
 protected:
     ModelListener* modelListener;
 };

@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "Components/ili9341/ili9341.h"
+#include "audio_player.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -75,7 +76,12 @@ I2C_HandleTypeDef hi2c3;
 
 LTDC_HandleTypeDef hltdc;
 
+RNG_HandleTypeDef hrng;
+
 SPI_HandleTypeDef hspi5;
+
+TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim7;
 
 UART_HandleTypeDef huart1;
 
@@ -114,6 +120,9 @@ static void MX_DMA2D_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_ADC2_Init(void);
+static void MX_TIM3_Init(void);
+static void MX_TIM7_Init(void);
+static void MX_RNG_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -194,6 +203,9 @@ int main(void)
   MX_ADC1_Init();
   MX_USART1_UART_Init();
   MX_ADC2_Init();
+  MX_TIM3_Init();
+  MX_TIM7_Init();
+  MX_RNG_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -278,7 +290,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 8;
   RCC_OscInitStruct.PLL.PLLN = 360;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 8;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -589,6 +601,32 @@ static void MX_LTDC_Init(void)
 }
 
 /**
+  * @brief RNG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RNG_Init(void)
+{
+
+  /* USER CODE BEGIN RNG_Init 0 */
+
+  /* USER CODE END RNG_Init 0 */
+
+  /* USER CODE BEGIN RNG_Init 1 */
+
+  /* USER CODE END RNG_Init 1 */
+  hrng.Instance = RNG;
+  if (HAL_RNG_Init(&hrng) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RNG_Init 2 */
+
+  /* USER CODE END RNG_Init 2 */
+
+}
+
+/**
   * @brief SPI5 Initialization Function
   * @param None
   * @retval None
@@ -635,6 +673,103 @@ static void MX_SPI5_Init(void)
     isRevD = 1;
   }
   /* USER CODE END SPI5_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 0;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 255;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+  HAL_TIM_MspPostInit(&htim3);
+
+}
+
+/**
+  * @brief TIM7 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM7_Init(void)
+{
+
+  /* USER CODE BEGIN TIM7_Init 0 */
+
+  /* USER CODE END TIM7_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM7_Init 1 */
+
+  /* USER CODE END TIM7_Init 1 */
+  htim7.Instance = TIM7;
+  htim7.Init.Prescaler = 89;
+  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim7.Init.Period = 124;
+  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim7, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM7_Init 2 */
+
+  /* USER CODE END TIM7_Init 2 */
 
 }
 
@@ -794,6 +929,16 @@ static void MX_GPIO_Init(void)
   * @param  Command: Pointer to SDRAM command structure
   * @retval None
   */
+uint32_t GetHardwareRandomNumber(void)
+{
+    uint32_t random_val = 0;
+    // Gọi thư viện HAL để lấy nhiễu phần cứng thực tế
+    if (HAL_RNG_GenerateRandomNumber(&hrng, &random_val) == HAL_OK) {
+        return random_val;
+    }
+    return 0; // Trả về 0 nếu có lỗi
+}
+
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command)
 {
  __IO uint32_t tmpmrd =0;
@@ -1126,31 +1271,34 @@ void StartDefaultTask(void *argument)
 	char uart_buf[32];
   /* Infinite loop */
 
-  for(;;)
-  {
-	  // 1. Đọc trục X từ ADC1
-	      HAL_ADC_Start(&hadc1);
-	      if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
-	      {
-	          globalJoystickX = HAL_ADC_GetValue(&hadc1); // Gán thẳng vào biến toàn cục của game
-	      }
-	      HAL_ADC_Stop(&hadc1); // Dừng ADC1
+	for(;;)
+	  {
+	      uint32_t sumX = 0;
+	      uint32_t sumY = 0;
 
-	      // 2. Đọc trục Y từ ADC2
-	      HAL_ADC_Start(&hadc2);
-	      if (HAL_ADC_PollForConversion(&hadc2, 10) == HAL_OK)
-	      {
-	          globalJoystickY = HAL_ADC_GetValue(&hadc2); // Gán thẳng vào biến toàn cục của game
-	      }
-	      HAL_ADC_Stop(&hadc2); // Dừng ADC2
+	      // Đọc và lấy trung bình 8 lần liên tiếp để triệt tiêu các đỉnh nhiễu của loa
+	      for(int i = 0; i < 8; i++) {
+	          HAL_ADC_Start(&hadc1);
+	          if (HAL_ADC_PollForConversion(&hadc1, 2) == HAL_OK) {
+	              sumX += HAL_ADC_GetValue(&hadc1);
+	          }
+	          HAL_ADC_Stop(&hadc1);
 
-	      // 3. In dữ liệu ra UART để debug
+	          HAL_ADC_Start(&hadc2);
+	          if (HAL_ADC_PollForConversion(&hadc2, 2) == HAL_OK) {
+	              sumY += HAL_ADC_GetValue(&hadc2);
+	          }
+	          HAL_ADC_Stop(&hadc2);
+	      }
+
+	      globalJoystickX = sumX / 8; // Giá trị trung bình siêu mượt
+	      globalJoystickY = sumY / 8;
+
 	      sprintf(uart_buf, "X: %4lu | Y: %4lu\r\n", globalJoystickX, globalJoystickY);
 	      HAL_UART_Transmit(&huart1, (uint8_t *)uart_buf, strlen(uart_buf), 10);
 
-	      // 4. Delay của hệ điều hành (Giúp TouchGFX Task có thời gian xử lý mượt mà)
-	      osDelay(50);
-  }
+	      osDelay(30); // Tăng tốc độ phản hồi một chút
+	  }
   /* USER CODE END 5 */
 }
 
@@ -1172,7 +1320,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
+  if (htim->Instance == TIM7)
+    {
+        __HAL_TIM_CLEAR_IT(&htim7, TIM_IT_UPDATE);
+        Audio_Process_Timer_Interrupt();
+    }
   /* USER CODE END Callback 1 */
 }
 
