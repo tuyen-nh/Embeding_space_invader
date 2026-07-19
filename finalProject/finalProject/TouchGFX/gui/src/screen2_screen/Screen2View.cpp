@@ -43,7 +43,7 @@ void Screen2View::handleTickEvent()
       return;
   }
 
-  // 4. DI CHUYỂN CỤM TRÁI TIM DỰA TRÊN BIÊN CỦA ENEMY CÒN SỐNG
+  // DI CHUYỂN CỤM TRÁI TIM DỰA TRÊN BIÊN CỦA ENEMY CÒN SỐNG
   // ======================================================
   bool shiftDirection = false;
 
