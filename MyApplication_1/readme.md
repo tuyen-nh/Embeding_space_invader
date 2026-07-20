@@ -5,4 +5,9 @@ The default IDE is set to STM32CubeIDE, to change IDE open the STM32F429I_DISCO_
 This TBS is configured for 320 x 240 pixels 16bpp screen resolution.  
 
 Performance testing can be done using the GPIO pins designated with the following signals: VSYNC_FREQ  - Pin PE2, RENDER_TIME - Pin PE3, FRAME_RATE  - Pin PE4, MCU_ACTIVE  - Pin PE5
- 
+
+Test Video:
+Lose Game: https://drive.google.com/file/d/1BTzUfoT97Nu8DSOD2uoa5OuZMQ2kTb-9/view?usp=sharing
+Win Game: https://drive.google.com/file/d/13Tsj8G9WPAVqMDJO1S4Feopz7HU-c2r8/view?usp=sharing
+
+Please check 2 branches: main and update. 
